@@ -1,10 +1,9 @@
-import { RouterProvider } from "react-router";
-import route from "./configs/routes";
+import Registration from "./components/Registration";
 
 function App() {
   return (
     <>
-      <RouterProvider router={route} />
+      <Registration />
     </>
   );
 }

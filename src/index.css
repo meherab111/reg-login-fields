@@ -3,5 +3,6 @@
 @import "tailwindcss";
 
 body{
+    font-family: "Poppins", sans-serif;
     background-color: rgb(33, 44, 32);
 }

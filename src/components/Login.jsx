@@ -1,29 +1,28 @@
 import { useState } from "react";
 
-const Registration = () => {
-
+const Login = () => {
   const [userInfo, setUserInfo] = useState({
-    fullName: "",
-    email: "",
     userName: "",
     password: "",
-  })
+  });
 
   const handleInputChange = (event) => {
-    const {name, value} = event.target;
-    setUserInfo((prev) => ({...prev, [name]:value}))
-  }
+    const { name, value } = event.target;
+    setUserInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    console.log(userInfo)
+    console.log(userInfo);
     setUserInfo({
-    fullName: "",
-    email: "",
     userName: "",
     password: "",
   })
   }
+
 
   const inputFields = "w-full bg-white text-black rounded-lg text-lg p-2";
 
@@ -34,29 +33,13 @@ const Registration = () => {
       }
     >
       <form onSubmit={handleFormSubmit}>
-        <div className={"bg-amber-400 flex justify-center text-center p-5 rounded-lg gap-5"}>
+        <div
+          className={
+            "bg-amber-400 flex justify-center text-center p-5 rounded-lg gap-5"
+          }
+        >
           <div className={"w-1/2 flex flex-col gap-4 items-center"}>
-            <h1 className={"text-3xl text-purple-950 my-5"}>Registration Form</h1>
-            <input
-              type="text"
-              name="fullName"
-              id="fullName"
-              placeholder="Full Name"
-              className={inputFields}
-              required
-              value={userInfo.fullName}
-              onChange={handleInputChange}
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className={inputFields}
-              required
-              value={userInfo.email}
-              onChange={handleInputChange}
-            />
+            <h1 className={"text-3xl text-purple-950 my-5"}>Login Form</h1>
             <input
               type="text"
               name="userName"
@@ -78,22 +61,32 @@ const Registration = () => {
               onChange={handleInputChange}
             />
 
-            <button type="submit" className={'px-5 py-3 bg-blue-600 rounded-lg cursor-pointer hover:bg-blue-400'}>Sing Up</button>
+            <button
+              type="submit"
+              className={
+                "px-5 py-3 bg-blue-600 rounded-lg cursor-pointer hover:bg-blue-400"
+              }
+            >
+              Login
+            </button>
 
             <div>
               <p className="text-2xl text-purple-950">
-                Already Signed Up?
-                <a href="#" className={"underline text-blue-600 pl-2 hover:text-blue-400"}>
-                  Login
+                Don't have an account?
+                <a
+                  href="#"
+                  className={"underline text-blue-600 pl-2 hover:text-blue-400"}
+                >
+                  Register
                 </a>
               </p>
             </div>
           </div>
           <div>
             <img
-              src="../public/images/registration/registration.jpg"
-              alt="reg image"
-              className={"w-full object-cover h-[400px] rounded-lg scale-x-[-1]"}
+              src="../public/images/login/login.jpg"
+              alt="login image"
+              className={"w-full object-cover h-[400px] rounded-lg"}
             />
           </div>
         </div>
@@ -102,4 +95,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Login;
